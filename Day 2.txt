@@ -1,3 +1,4 @@
+// binary search
 import java.util.*;
 class search{
     public int search(int arr[],int k, int first, int last){
