@@ -1,0 +1,42 @@
+//equilibrium
+import java.util.*;
+class equilibrium{
+    int sum1, sum2;
+    public int find(int arr[]){
+        int i,j,k;
+        for(i=1;i<arr.length-1; i++){
+            sum1 = 0;
+            sum2 = 0;
+            for(j=i-1; j>=0; j--){
+                sum1 += arr[j];
+            }
+            for(k=i+1; k<arr.length; k++){
+                sum2 += arr[k];
+            }
+            if(sum1 == sum2){
+                return i+1;
+            }
+        } 
+        return -1;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in = new Scanner(System.in);
+		System.out.println("Enter the size of the array");
+		int n = in.nextInt();
+		int arr[] = new int[n];
+		System.out.println("Enter the elements of the array");
+		for(int i=0;i<arr.length;i++){
+		    arr[i] = in.nextInt();
+		}
+		equilibrium ob = new equilibrium();
+		int k = ob.find(arr);
+		if(k== -1)
+		System.out.println("Don't Exist");
+		
+		else
+		System.out.println("Equilibrium exists at "+k+" position.");
+	}
+}
